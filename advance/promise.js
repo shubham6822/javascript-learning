@@ -3,10 +3,14 @@ function proccedtopayment() {
 }
 
 function orderfood() {
-  setTimeout(() => {
-    console.log("food ordered");
-  }, 1000);
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      console.log("food ordered");
+      resolve();
+    }, 1000);
+  });
 }
 
-await new Promise(orderfood);
+orderfood();
+
 proccedtopayment();
